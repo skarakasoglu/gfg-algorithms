@@ -8,7 +8,7 @@ package searchsort
 // max: the maximum index of the elements that have possibility to equal to x
 // min: the minimum index of the elements that have possibility to equal to x
 func BinarySearch(arr []int, x int, max int, min int) int {
-	medium := min + (max - min) / 2
+	medium := (max + min) / 2
 
 	if max >= min {
 		if arr[medium] > x {
