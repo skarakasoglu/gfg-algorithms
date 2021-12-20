@@ -41,7 +41,7 @@ func benchmarkBinarySearch(arr []int, x int, max int, min int, b *testing.B) {
 func BenchmarkBinarySearch(b *testing.B) {
 	size := 10000
 	arr := make([]int, size)
-	for i := 1; i < size; i++ {
+	for i := 1; i <= size; i++ {
 		arr[i - 1] = i
 	}
 	x := 9999
@@ -100,7 +100,7 @@ func benchmarkBitwiseBinarySearch(arr []int, x int, b *testing.B) {
 func BenchmarkBitwiseBinarySearch(b *testing.B) {
 	size := 10000
 	arr := make([]int, size)
-	for i := 1; i < size; i++ {
+	for i := 1; i <= size; i++ {
 		arr[i - 1] = i
 	}
 	x := 9999
@@ -111,7 +111,7 @@ func BenchmarkBitwiseBinarySearch(b *testing.B) {
 func TestNonRecursiveBinarySearch(t *testing.T) {
 	size := 10000
 	arr := make([]int, size)
-	for i := 1; i < size; i++ {
+	for i := 1; i <= size; i++ {
 		arr[i - 1] = i
 	}
 	x := 9999
@@ -133,7 +133,7 @@ func benchmarkNonRecursiveBinarySearch(arr []int, x int, b *testing.B) {
 func BenchmarkNonRecursiveBinarySearch(b *testing.B) {
 	size := 10000
 	arr := make([]int, size)
-	for i := 1; i < size; i++ {
+	for i := 1; i <= size; i++ {
 		arr[i - 1] = i
 	}
 	x := 9999
