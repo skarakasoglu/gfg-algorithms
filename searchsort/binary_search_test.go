@@ -32,6 +32,26 @@ func TestBinarySearchWithNonExistingElement(t *testing.T) {
 	}
 }
 
+func TestBinarySearchWithLargeInput(t *testing.T) {
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i <= size; i++ {
+		arr[i - 1] = i
+	}
+	x := 4542
+
+	max := len(arr) - 1
+	min := 0
+
+	expectedIndex := 4541
+
+	index := BinarySearch(arr, x, max, min)
+
+	if index != expectedIndex {
+		t.Errorf("Element index is incorrect, got: %d, expected: %v", index, expectedIndex)
+	}
+}
+
 func benchmarkBinarySearch(arr []int, x int, max int, min int, b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		BinarySearch(arr, x, max, min)
