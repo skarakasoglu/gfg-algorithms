@@ -7,6 +7,7 @@ package searchsort
 // x: the element we search
 // max: the maximum index of the elements that have possibility to equal to x
 // min: the minimum index of the elements that have possibility to equal to x
+// Time complexity: O(Log n)
 func BinarySearch(arr []int, x int, max int, min int) int {
 	medium := min + (max - min) / 2
 

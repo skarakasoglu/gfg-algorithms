@@ -2,6 +2,9 @@ package searchsort
 
 import "math"
 
+// JumpSearch jumps ahead at fixed steps if the current index value is greater than x
+// then goes back for one fixed step and does linear search.
+// Time complexity: O(√n)
 func JumpSearch(arr []int, x int) int {
 	// block size to be jumped
 	m := int(math.Sqrt(float64(len(arr))))
