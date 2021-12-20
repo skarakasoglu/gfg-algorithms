@@ -23,6 +23,26 @@ func BinarySearch(arr []int, x int, max int, min int) int {
 	return -1
 }
 
+// NonRecursiveBinarySearch just a regular binary search implementation using loops.
+func NonRecursiveBinarySearch(arr []int, x int) int {
+	min := 0
+	max := len(arr) - 1
+
+	for max > min {
+		medium := (min + max) / 2
+
+		if arr[medium] > x {
+			max = medium - 1
+		} else if arr[medium] < x {
+			min = medium + 1
+		} else if arr[medium] == x {
+			return medium
+		}
+	}
+
+	return -1
+}
+
 // BitwiseBinarySearch Since all numbers can be represented as a sum of the powers of 2
 // this function performs binary search using bitwise operators.
 // arr: the array to look for in

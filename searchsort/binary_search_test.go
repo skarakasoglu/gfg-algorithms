@@ -39,8 +39,13 @@ func benchmarkBinarySearch(arr []int, x int, max int, min int, b *testing.B) {
 }
 
 func BenchmarkBinarySearch(b *testing.B) {
-	arr := []int{2,5,8,12,16,23,38,56,72,91}
-	x := 23
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i < size; i++ {
+		arr[i - 1] = i
+	}
+	x := 9999
+
 	max := len(arr) - 1
 	min := 0
 
@@ -93,9 +98,45 @@ func benchmarkBitwiseBinarySearch(arr []int, x int, b *testing.B) {
 }
 
 func BenchmarkBitwiseBinarySearch(b *testing.B) {
-	arr := []int{2,5,8,12,16,23,38,56,72,91}
-	x := 23
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i < size; i++ {
+		arr[i - 1] = i
+	}
+	x := 9999
 
 	benchmarkBitwiseBinarySearch(arr, x, b)
 }
 
+func TestNonRecursiveBinarySearch(t *testing.T) {
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i < size; i++ {
+		arr[i - 1] = i
+	}
+	x := 9999
+
+	expectedIndex := 9998
+	index := NonRecursiveBinarySearch(arr, x)
+
+	if index != expectedIndex {
+		t.Errorf("Element index is incorrect, got: %d, expected: %v", index, expectedIndex)
+	}
+}
+
+func benchmarkNonRecursiveBinarySearch(arr []int, x int, b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		NonRecursiveBinarySearch(arr, x)
+	}
+}
+
+func BenchmarkNonRecursiveBinarySearch(b *testing.B) {
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i < size; i++ {
+		arr[i - 1] = i
+	}
+	x := 9999
+
+	benchmarkNonRecursiveBinarySearch(arr, x, b)
+}
