@@ -7,6 +7,12 @@ import "math"
 // Time complexity: O(√n)
 func JumpSearch(arr []int, x int) int {
 	// block size to be jumped
+	// n / m: it skips m values in every turn, m - 1: in the worst case it does linear search m - 1 times.
+	// in the worst case the total number of comparisons will be ((n / m) + (m - 1))
+	// to be able to find the best m value, this equation should be minimum.
+	// the minimum and maximum values are where the derivative of an equation change sign and equal to 0.
+	// if we take the derivative of this equation and find the root, it will be m = √n
+	// therefore the best block size is √n
 	m := int(math.Sqrt(float64(len(arr))))
 
 	i := 0
