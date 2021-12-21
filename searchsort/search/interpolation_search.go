@@ -1,4 +1,4 @@
-package searchsort
+package search
 
 // InterpolationSearch it is a binary search logically, but binary search takes medium value as checkpoints
 // this method goes to different locations to the position of the element being searched.

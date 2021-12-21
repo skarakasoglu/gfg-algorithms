@@ -1,4 +1,4 @@
-package searchsort
+package search
 
 import "math"
 

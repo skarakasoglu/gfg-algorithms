@@ -1,4 +1,4 @@
-package searchsort
+package search
 
 // ExponentialSearch finds range where the element exists and does the binary search within that range
 // works better than binary search when the element being searched is closer to the first element.

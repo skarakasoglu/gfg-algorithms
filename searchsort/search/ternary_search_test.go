@@ -1,40 +1,44 @@
-package searchsort
+package search
 
 import "testing"
 
-func TestJumpSearchWithAnExistingElement(t *testing.T) {
+func TestTernarySearch(t *testing.T) {
 	arr := []int{2,5,8,12,16,23,38,56,72,91}
 	x := 23
 
 	expectedIndex := 5
 
-	index := JumpSearch(arr, x)
+	index := TernarySearch(arr, x)
 
 	if index != expectedIndex {
 		t.Errorf("Element index is incorrect, got: %d, expected: %v", index, expectedIndex)
 	}
 }
 
-func TestJumpSearchWithNonExistingElement(t *testing.T) {
-	arr := []int{2,5,8,12,16,23,38,56,72,91}
-	x := 53
+func TestTernarySearchWithLargeInput(t *testing.T) {
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i <= size; i++ {
+		arr[i - 1] = i
+	}
+	x := 5731
 
-	expectedIndex := -1
+	expectedIndex := 5730
 
-	index := JumpSearch(arr, x)
+	index := TernarySearch(arr, x)
 
 	if index != expectedIndex {
 		t.Errorf("Element index is incorrect, got: %d, expected: %v", index, expectedIndex)
 	}
 }
 
-func benchmarkJumpSearch(arr []int, x int, b *testing.B) {
+func benchmarkTernarySearch(arr []int, x int, b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		JumpSearch(arr, x)
+		TernarySearch(arr, x)
 	}
 }
 
-func BenchmarkJumpSearch(b *testing.B) {
+func BenchmarkTernarySearch(b *testing.B) {
 	size := 10000
 	arr := make([]int, size)
 	for i := 1; i <= size; i++ {
@@ -42,5 +46,5 @@ func BenchmarkJumpSearch(b *testing.B) {
 	}
 	x := 9999
 
-	benchmarkJumpSearch(arr, x, b)
+	benchmarkTernarySearch(arr, x, b)
 }

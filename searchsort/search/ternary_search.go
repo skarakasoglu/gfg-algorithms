@@ -1,4 +1,4 @@
-package searchsort
+package search
 
 // TernarySearch it is a searching algorithm similar to binary search but it divides the array into 3 parts.
 // Time complexity: O(Log3 N)
