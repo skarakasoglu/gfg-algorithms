@@ -26,3 +26,13 @@ func BenchmarkSelectionSort(b *testing.B) {
 	arr := []int{4, 1, 3, 9, 7}
 	benchmarkSelectionSort(arr, b)
 }
+
+func BenchmarkSelectionSortWithLargeInput(b *testing.B) {
+	size := 10000
+	arr := make([]int, size)
+	for i := 1; i <= size; i++ {
+		arr[i - 1] = i
+	}
+
+	benchmarkSelectionSort(arr, b)
+}
