@@ -8,11 +8,11 @@ import (
 func TestSelectionSort(t *testing.T) {
 	arr := []int{4, 1, 3, 9, 7}
 
-	got := SelectionSort(arr)
+	SelectionSort(arr)
 	expected := []int{1,3,4,7,9}
 
-	if fmt.Sprintf("%v", got) != fmt.Sprintf("%v", expected) {
-		t.Errorf("Selection sort is incorrect, got: %d, expected: %v", got, expected)
+	if fmt.Sprintf("%v", arr) != fmt.Sprintf("%v", expected) {
+		t.Errorf("Selection sort is incorrect, got: %d, expected: %v", arr, expected)
 	}
 }
 
@@ -27,7 +27,7 @@ func BenchmarkSelectionSort(b *testing.B) {
 	benchmarkSelectionSort(arr, b)
 }
 
-func BenchmarkSelectionSortWithLargeInput(b *testing.B) {
+func BenchmarkSelectionSortWithLargeInputSorted(b *testing.B) {
 	size := 10000
 	arr := make([]int, size)
 	for i := 1; i <= size; i++ {

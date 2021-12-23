@@ -5,7 +5,7 @@ package sort
 // Auxiliary Space: O(1)
 // Stable: Default implementation is not stable, but it can be made.
 // In place: Yes, does not require extra space.
-func SelectionSort(arr []int) []int {
+func SelectionSort(arr []int) {
 
 	subIndex := 0
 
@@ -23,6 +23,4 @@ func SelectionSort(arr []int) []int {
 		arr[subIndex], arr[currentMinimumIndex] = arr[currentMinimumIndex], arr[subIndex]
 		subIndex++
 	}
-
-	return arr
 }

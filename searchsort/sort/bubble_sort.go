@@ -6,7 +6,7 @@ package sort
 // Auxiliary Space: O(1)
 // In Place: Yes
 // Stable: Yes
-func BubbleSort(arr []int) []int{
+func BubbleSort(arr []int){
 	for i := 0; i < len(arr) - 1; i++ {
 		anySwap := false
 
@@ -21,6 +21,4 @@ func BubbleSort(arr []int) []int{
 			break
 		}
 	}
-
-	return arr
 }

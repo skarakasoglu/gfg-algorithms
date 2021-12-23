@@ -7,26 +7,26 @@ package sort
 // Algorithm Paradigm: Divide and Conquer
 // Stable: Yes
 // In Place: No
-func MergeSort(arr []int) []int {
+func MergeSort(arr []int) {
 	l := 0
 	r := len(arr) - 1
 
-	return mergeSort(arr, l, r)
+	mergeSort(arr, l, r)
 }
 
-func mergeSort(arr []int, left int, right int) []int {
+func mergeSort(arr []int, left int, right int) {
 	if left >= right {
-		return arr
+		return
 	}
 
 	medium := left + (right - left) / 2
 
 	mergeSort(arr, left, medium)
 	mergeSort(arr, medium + 1, right)
-	return merge(arr, left, medium, right)
+	merge(arr, left, medium, right)
 }
 
-func merge(arr []int, left int, medium int, right int) []int {
+func merge(arr []int, left int, medium int, right int) {
 	leftArraySize := medium - left + 1
 	rightArraySize := right - medium
 
@@ -62,6 +62,4 @@ func merge(arr []int, left int, medium int, right int) []int {
 		rightArrayIndex++
 		mergedArrayIndex++
 	}
-
-	return arr
 }

@@ -6,7 +6,7 @@ package sort
 // Stable: Yes
 // In Place: Yes
 // Algorithmic Paradigm: Incremental Approach
-func InsertionSort(arr []int) []int {
+func InsertionSort(arr []int) {
 	for i := 1; i < len(arr); i++ {
 		if arr[i] < arr[i - 1] {
 			for j := i - 1; j >= 0; j-- {
@@ -18,6 +18,4 @@ func InsertionSort(arr []int) []int {
 			}
 		}
 	}
-
-	return arr
 }

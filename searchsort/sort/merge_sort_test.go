@@ -8,11 +8,11 @@ import (
 func TestMergeSort(t *testing.T) {
 	arr := []int{4, 1, 3, 9, 7}
 
-	got := MergeSort(arr)
+	MergeSort(arr)
 	expected := []int{1,3,4,7,9}
 
-	if fmt.Sprintf("%v", got) != fmt.Sprintf("%v", expected) {
-		t.Errorf("Merge sort is incorrect, got: %d, expected: %v", got, expected)
+	if fmt.Sprintf("%v", arr) != fmt.Sprintf("%v", expected) {
+		t.Errorf("Merge sort is incorrect, got: %d, expected: %v", arr, expected)
 	}
 }
 
@@ -27,8 +27,8 @@ func BenchmarkMergeSort(b *testing.B) {
 	benchmarkMergeSort(arr, b)
 }
 
-func BenchmarkMergeSortWithLargeInput(b *testing.B) {
-	size := 100000
+func BenchmarkMergeSortWithLargeInputSorted(b *testing.B) {
+	size := 1000000
 	arr := make([]int, size)
 	for i := 1; i <= size; i++ {
 		arr[i - 1] = i
