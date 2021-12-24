@@ -11,6 +11,8 @@ const (
 	RadixSortType_BucketSort
 )
 
+// RadixSort sorts digit by digit using counting sort or bucket sort.
+// Time Complexity: O(logb(k)*(n+b)), b: numbers, k: maximum possible number
 func RadixSort(arr []int, sortType RadixSortType) {
 	max := getMax(arr)
 
