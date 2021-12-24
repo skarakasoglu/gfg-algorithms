@@ -64,6 +64,8 @@ func LargestNumber(s string) string {
 }
 
 // CountingSort counts the number of objects having distinct key values, calculates the position of each object in the output sequence.
+// Time Complexity: O(n + k)
+// Auxiliary Space: O(n + k)
 func CountingSort(arr []int) []int {
 	frequencies := make([]int, 9)
 	for i, _ := range frequencies {
