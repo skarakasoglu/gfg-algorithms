@@ -27,6 +27,8 @@ func BenchmarkQuickSort(b *testing.B) {
 	bechmarkQuickSort(arr, b)
 }
 
+/*
+Worst case, takes so much time.
 func BenchmarkQuickSortWithLargeInputSorted(b *testing.B) {
 	size := 1000000
 	arr := make([]int, size)
@@ -36,3 +38,6 @@ func BenchmarkQuickSortWithLargeInputSorted(b *testing.B) {
 
 	bechmarkQuickSort(arr, b)
 }
+
+
+ */
