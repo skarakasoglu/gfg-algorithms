@@ -22,6 +22,8 @@ func RadixSort(arr []int, sortType RadixSortType) {
 		for i := 0; max / int(math.Pow(float64(base), float64(i))) > 0; i++ {
 			countingSort(arr, base, i)
 		}
+	} else if sortType == RadixSortType_BucketSort {
+		// TODO
 	}
 }
 
